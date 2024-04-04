@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/",
-    component: () => import("@/components/HelloWorld.vue"),
+    component: () => import("@/views/Test/index.vue"),
   },
 ];
 // 创建路由器实例
