@@ -13,7 +13,6 @@ import UnoCSS from "unocss/vite";
 const srcPath = path.resolve(__dirname, "src");
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
-  console.log(env);
 
   return {
     server: {
