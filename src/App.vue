@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import variables from '@/styles/variables.module.scss';
-import { ElConfigProvider } from 'element-plus'
-import { useAppStore } from '@/store/modules/app.ts'
+import { ElConfigProvider } from "element-plus";
+import { useAppStore } from "@/store/modules/app.ts";
 const appStore = useAppStore();
-console.log(variables);
-
 </script>
 
 <template>
@@ -17,12 +14,14 @@ console.log(variables);
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
   transition: filter 300ms;
+  will-change: filter;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
