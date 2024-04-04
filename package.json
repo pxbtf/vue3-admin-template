@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.{vue,ts,js}\" --fix",
     "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\"",
-    "lint:stylelint": "stylelint \"**/*.{css,scss,vue,html}\" --fix"
+    "lint:stylelint": "stylelint \"**/*.{css,scss,vue,html}\" --fix",
+    "prepare": "husky install",
+    "lint:lint-staged": "lint-staged"
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
@@ -22,6 +24,27 @@
     "vue-i18n": "9",
     "vue-router": "^4.0.13"
   },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{cjs,json}": [
+      "prettier --write"
+    ],
+    "*.{vue,html}": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{scss,css}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@iconify-json/ep": "^1.1.14",
     "@types/node": "^20.12.2",
@@ -31,6 +54,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.24.0",
     "fast-glob": "3.2.11",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.2",
     "postcss": "^8.4.38",
     "postcss-html": "^1.6.0",
     "postcss-scss": "^4.0.9",
