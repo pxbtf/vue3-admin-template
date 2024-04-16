@@ -40,6 +40,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^19.1.0
     version: 19.1.0
+  '@element-plus/icons-vue':
+    specifier: ^2.3.1
+    version: 2.3.1(vue@3.4.21)
   '@iconify-json/ep':
     specifier: ^1.1.14
     version: 1.1.14
@@ -680,7 +683,6 @@ packages:
       vue: ^3.2.0
     dependencies:
       vue: 3.4.21(typescript@5.4.3)
-    dev: false
 
   /@esbuild/aix-ppc64@0.20.2:
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
