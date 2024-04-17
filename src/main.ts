@@ -8,7 +8,7 @@ import "virtual:svg-icons-register";
 import "uno.css";
 // 引入暗黑模式
 import "element-plus/theme-chalk/dark/css-vars.css";
-
+import "@/styles/index.scss";
 const app = createApp(App);
 // 全局注册store
 setupStore(app);
@@ -16,5 +16,4 @@ setupStore(app);
 setupElIcons(app);
 // 国际化
 setupI18n(app);
-app.use(router);
-app.mount("#app");
+app.use(router).mount("#app");

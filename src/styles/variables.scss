@@ -1,1 +1,14 @@
-$bg-color: #be2020;
+:root {
+  --menu-background: #304156;
+  --menu-text: #bfcbd9;
+  --menu-active-text: var(--el-menu-active-color);
+  --menu-hover: #263445;
+  --sidebar-logo-background: #2d3748;
+  --el-menu-bg-color: #304156 !important;
+  --el-menu-text-color: #bfcbd9;
+}
+
+$sidebar-width: 210px; // 侧边栏宽度
+$menu-background: #304156; // 菜单背景
+$menu-text: var(--menu-text); // 菜单文字颜色
+$menu-active-text: var(--menu-active-text); // 菜单激活文字颜色

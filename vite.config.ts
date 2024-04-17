@@ -7,7 +7,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import IconsResolver from "unplugin-icons/resolver";
 import Icon from "unplugin-icons/vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import UnoCSS from "unocss/vite";
+import Unocss from "unocss/vite";
 import { name, version, engines, dependencies, devDependencies } from "./package.json";
 /** 平台的名称、版本、运行所需的`node`版本、依赖、构建时间的类型提示 */
 const __APP_INFO__ = {
@@ -68,7 +68,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         iconDirs: [path.resolve(srcPath, "assets/icons")],
         symbolId: "icon-[dir]-[name]",
       }),
-      UnoCSS({}),
+      Unocss({}),
     ],
     // 预加载项目必需的组件
     optimizeDeps: {

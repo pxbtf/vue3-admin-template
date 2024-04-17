@@ -17,7 +17,10 @@ export const useAppStore = defineStore("app", () => {
       return zhCn;
     }
   });
-
+  /**
+   * 侧边栏开关
+   */
+  const sidder = reactive({ opened: false });
   /**
    * 切换语言
    */
@@ -28,6 +31,7 @@ export const useAppStore = defineStore("app", () => {
   return {
     language,
     locale,
+    sidder,
     changeLanguage,
   };
 });

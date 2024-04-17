@@ -1,10 +1,18 @@
 // 创建路由器实例
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+export const Layout = () => import("@/layout/index.vue");
 // 静态路由
 const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/",
-    component: () => import("@/views/Test/index.vue"),
+    component: Layout,
+    redirect: "/dashboard",
+    children: [
+      {
+        path: "dashboard",
+        component: () => import("@/views/dashboard/index.vue"),
+      },
+    ],
   },
 ];
 // 创建路由器实例
