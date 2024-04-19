@@ -1,11 +1,24 @@
-# Vue 3 后台管理平台模版
-## Vue 3 + TypeScript + Vite
+<div align="center"> 
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# vue3-admin-template
+</div>
 
-## Recommended Setup
+<div align="center">
+    <img src="https://img.shields.io/badge/Vue-3.4.21-brightgreen.svg"/>
+    <img src="https://img.shields.io/badge/Vite-5.2.8-green.svg"/>
+    <img src="https://img.shields.io/badge/Element Plus-2.7.0-blue.svg"/>
+    <img src="https://img.shields.io/badge/license-MIT-green.svg"/>
+</div>
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+### 项目简介
+[vue3-admin-template](https://github.com/pxbtf/vue3-admin-template)是基于 Vue3 + TypeScript5 + Vite5 + Element-Plus + Pinia 等主流技术栈构建的后台管理模板。
+
+### 项目基础功能
+- 动态路由
+- 用户角色
+- 代码提交规范
+- 其他正在持续更新
+
+
 
