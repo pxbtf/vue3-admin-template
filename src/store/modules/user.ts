@@ -3,6 +3,7 @@ import { LoginData } from "@/api/auth/types";
 import { defineStore } from "pinia";
 import { getUserInfoApi } from "@/api/user/index";
 import { UserInfo } from "@/api/user/types";
+import { resetRouter } from "@/router";
 export const useUserStore = defineStore("user", () => {
   const user = ref<UserInfo>({
     roles: [],
@@ -42,9 +43,18 @@ export const useUserStore = defineStore("user", () => {
         });
     });
   }
+  // 重置token
+  function resetToken() {
+    return new Promise<void>((resolve) => {
+      localStorage.setItem("accessToken", "");
+      resetRouter();
+      resolve();
+    });
+  }
   return {
     login,
     getUserInfo,
     user,
+    resetToken,
   };
 });

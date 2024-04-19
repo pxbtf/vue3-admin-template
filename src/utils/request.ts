@@ -6,6 +6,7 @@ const server = axios.create({
   timeout: 50000,
   headers: { "Content-Type": "application/json;charset=utf-8" },
 });
+
 // 请求拦截器
 server.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {

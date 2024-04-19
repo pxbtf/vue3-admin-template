@@ -7,7 +7,12 @@ export {}
 
 declare module "vue" {
   export interface GlobalComponents {
+    AppMain: (typeof import("./../layout/components/AppMain/index.vue"))["default"];
     ElButton: (typeof import("element-plus/es"))["ElButton"];
+    ElIcon: (typeof import("element-plus/es"))["ElIcon"];
+    ElMenu: (typeof import("element-plus/es"))["ElMenu"];
+    ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
+    ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
     HelloWorld: (typeof import("./../components/HelloWorld.vue"))["default"];
     IEpInfoFilled: (typeof import("~icons/ep/info-filled"))["default"];
     IEpSuccessFilled: (typeof import("~icons/ep/success-filled"))["default"];
@@ -16,7 +21,12 @@ declare module "vue" {
     LangSelect: (typeof import("./../components/LangSelect/index.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
-    SvgIcon: (typeof import("./../components/SvgIcon/index.vue"))["default"];
+    Settings: (typeof import("./../layout/components/Settings/index.vue"))["default"];
+    Sidebar: (typeof import("./../layout/components/Sidebar/index.vue"))["default"];
     SideMenu: (typeof import("./../layout/components/Sidebar/components/SideMenu.vue"))["default"];
+    SideMenuItem: (typeof import("./../layout/components/Sidebar/components/SideMenuItem.vue"))["default"];
+    SideMenuItemTitle: (typeof import("./../layout/components/Sidebar/components/SideMenuItemTitle.vue"))["default"];
+    SideMenuItemTop: (typeof import("./../layout/components/Sidebar/components/SideMenuItemTop.vue"))["default"];
+    SvgIcon: (typeof import("./../components/SvgIcon/index.vue"))["default"];
   }
 }

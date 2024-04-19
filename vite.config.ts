@@ -9,6 +9,7 @@ import Icon from "unplugin-icons/vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import Unocss from "unocss/vite";
 import { name, version, engines, dependencies, devDependencies } from "./package.json";
+import { viteMockServe } from "vite-plugin-mock";
 /** 平台的名称、版本、运行所需的`node`版本、依赖、构建时间的类型提示 */
 const __APP_INFO__ = {
   pkg: { name, version, engines, dependencies, devDependencies },
@@ -23,7 +24,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     server: {
       proxy: {
         [env.VITE_APP_BASE_API]: {
-          target: "xxxxx",
+          target: env.VITE_APP_API_URL,
           changeOrigin: true,
           rewrite: (path) => path.replace(new RegExp("^" + env.VITE_APP_BASE_API), ""),
         },
@@ -45,6 +46,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     plugins: [
       vue(),
+      viteMockServe({
+        mockPath: "mock",
+        enable: true,
+      }),
       AutoImport({
         imports: ["vue", "@vueuse/core", "pinia", "vue-router", "vue-i18n"],
         eslintrc: {
@@ -54,12 +59,12 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         },
         resolvers: [ElementPlusResolver(), IconsResolver({})],
         vueTemplate: true,
-        dts: false,
+        dts: path.resolve(srcPath, "types", "auto-imports.d.ts"),
       }),
       Components({
         resolvers: [ElementPlusResolver(), IconsResolver({ enabledCollections: ["ep"] })],
         dirs: ["src/components", "src/**/components"],
-        dts: false,
+        dts: path.resolve(srcPath, "types", "components.d.ts"),
       }),
       Icon({
         autoInstall: true,

@@ -2,7 +2,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 export const Layout = () => import("@/layout/index.vue");
 // 静态路由
-const constantRoutes: RouteRecordRaw[] = [
+export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/",
     component: Layout,
