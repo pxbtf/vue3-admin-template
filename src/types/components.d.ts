@@ -7,6 +7,7 @@ export {}
 
 declare module "vue" {
   export interface GlobalComponents {
+    AppLink: (typeof import("./../components/AppLink/index.vue"))["default"];
     AppMain: (typeof import("./../layout/components/AppMain/index.vue"))["default"];
     ElButton: (typeof import("element-plus/es"))["ElButton"];
     ElCard: (typeof import("element-plus/es"))["ElCard"];
