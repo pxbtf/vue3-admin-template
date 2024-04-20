@@ -10,9 +10,22 @@ export const constantRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: "dashboard",
+        name: "Dashboard",
         component: () => import("@/views/dashboard/index.vue"),
+        meta: {
+          title: "Dashboard",
+          icon: "homepage",
+        },
       },
     ],
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/login/index.vue"),
+    meta: {
+      hidden: true,
+    },
   },
 ];
 // 创建路由器实例

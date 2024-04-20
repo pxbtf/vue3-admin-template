@@ -1,27 +1,53 @@
 <template>
-  <el-sub-menu index="1">
-    <template #title>
-      <SideMenuItemTitle title="首页" icon="el-icon-Odometer" />
-    </template>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon>
-        <document />
-      </el-icon>
-      <template #title>Navigator Three</template>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon>
-        <setting />
-      </el-icon>
-      <template #title>Navigator Four</template>
-    </el-menu-item>
-  </el-sub-menu>
+  <div v-if="!item.meta || !item.meta.hidden">
+    <!-- 拥有单个子路由的菜单或没有子路由的福路由 -->
+    <template> </template>
+    <!-- 拥有子路由 -->
+    <el-sub-menu :index="resolvePath(item.path)">
+      <template #title>
+        <SideMenuItemTitle v-if="item.meta" :title="item.meta.title" :icon="item.meta && item.meta.icon" />
+      </template>
+      <SideMenuItem
+        v-for="child in item.children"
+        :key="child.path"
+        :is-nest="true"
+        :item="child"
+        :base-path="resolvePath(child.path)"
+      />
+    </el-sub-menu>
+  </div>
 </template>
 <script lang="ts" setup>
-import { Document, Menu as IconMenu, Setting } from "@element-plus/icons-vue";
 import SideMenuItemTitle from "./SideMenuItemTitle.vue";
+import path from "path-browserify";
+import { isExternal } from "@/utils/index";
+defineOptions({
+  name: "SideMenuItem",
+  inheritAttrs: false,
+});
+const props = defineProps({
+  item: {
+    type: Object,
+    required: true,
+  },
+  basePath: {
+    type: String,
+    required: true,
+  },
+  isNest: {
+    type: Boolean,
+    default: false,
+  },
+});
+function resolvePath(routePath: string) {
+  // 判断是否是外链
+  if (isExternal(routePath)) {
+    return routePath;
+  }
+  if (isExternal(props.basePath)) {
+    return props.basePath;
+  }
+  const fullPath = path.resolve(props.basePath, routePath);
+  return fullPath;
+}
 </script>

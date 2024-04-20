@@ -47,17 +47,17 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       vue(),
       viteMockServe({
-        mockPath: "mock",
+        mockPath: "./src/mock",
         enable: true,
       }),
       AutoImport({
         imports: ["vue", "@vueuse/core", "pinia", "vue-router", "vue-i18n"],
+        resolvers: [ElementPlusResolver(), IconsResolver({})],
         eslintrc: {
           enabled: false,
           filepath: "./.eslintrc-auto-import.json",
           globalsPropValue: true,
         },
-        resolvers: [ElementPlusResolver(), IconsResolver({})],
         vueTemplate: true,
         dts: path.resolve(srcPath, "types", "auto-imports.d.ts"),
       }),

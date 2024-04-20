@@ -1,11 +1,11 @@
 import { MockMethod } from "vite-plugin-mock";
 export default [
   {
-    url: import.meta.env.VITE_APP_BASE_API + "/api/v1/menus/routes",
+    url: "/dev-api/api/v1/menus/routes",
     method: "get",
     response: () => {
       return {
-        code: 0,
+        code: "200",
         data: [
           {
             path: "/system",

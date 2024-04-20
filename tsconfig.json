@@ -9,6 +9,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "types": ["vite/client", "element-plus/global", "unplugin-icons/types/vue"],
     "allowSyntheticDefaultImports": true,
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -23,7 +24,16 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts", "auto-imports.d.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/types/**/*.d.ts",
+    "auto-imports.d.ts",
+    "mock/**/*.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"],
   "references": [
     {
       "path": "./tsconfig.node.json"

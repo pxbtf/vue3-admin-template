@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "@/router";
 import { setupStore } from "@/store";
-import { setupElIcons, setupI18n } from "@/plugins";
+import { setupElIcons, setupI18n, setupPermission } from "@/plugins";
 import "./style.css";
 import "virtual:svg-icons-register";
 import "uno.css";
@@ -16,4 +16,5 @@ setupStore(app);
 setupElIcons(app);
 // 国际化
 setupI18n(app);
+setupPermission();
 app.use(router).mount("#app");

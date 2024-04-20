@@ -52,6 +52,9 @@ devDependencies:
   '@types/nprogress':
     specifier: ^0.2.3
     version: 0.2.3
+  '@types/path-browserify':
+    specifier: ^1.0.2
+    version: 1.0.2
   '@typescript-eslint/eslint-plugin':
     specifier: ^7.5.0
     version: 7.5.0(@typescript-eslint/parser@7.5.0)(eslint@8.57.0)(typescript@5.4.3)
@@ -88,6 +91,9 @@ devDependencies:
   nprogress:
     specifier: ^0.2.0
     version: 0.2.0
+  path-browserify:
+    specifier: ^1.0.1
+    version: 1.0.1
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -1213,6 +1219,10 @@ packages:
 
   /@types/nprogress@0.2.3:
     resolution: {integrity: sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==}
+    dev: true
+
+  /@types/path-browserify@1.0.2:
+    resolution: {integrity: sha512-ZkC5IUqqIFPXx3ASTTybTzmQdwHwe2C0u3eL75ldQ6T9E9IWFJodn6hIfbZGab73DfyiHN4Xw15gNxUq2FbvBA==}
     dev: true
 
   /@types/semver@7.5.8:

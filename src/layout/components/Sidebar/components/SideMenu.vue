@@ -1,7 +1,7 @@
 <template>
   <el-menu
     :default-active="currentRoute.path"
-    :collapse="appStore.sidder.opened"
+    :collapse="appStore.sidebar.opened"
     :background-color="variables['menu-background']"
     :text-color="variables['menu-text']"
     :active-text-color="variables['menu-active-text']"
@@ -24,7 +24,7 @@ const appStore = useAppStore();
 import SideMenuItem from "./SideMenuItem.vue";
 import variables from "@/styles/variables.module.scss";
 const currentRoute = useRoute();
-import path from "path";
+import path from "path-browserify";
 
 const handleOpen = () => {
   console.log("handleOpen");

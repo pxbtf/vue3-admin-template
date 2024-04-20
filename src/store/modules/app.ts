@@ -20,7 +20,7 @@ export const useAppStore = defineStore("app", () => {
   /**
    * 侧边栏开关
    */
-  const sidder = reactive({ opened: false });
+  const sidebar = reactive({ opened: false });
   /**
    * 切换语言
    */
@@ -31,7 +31,7 @@ export const useAppStore = defineStore("app", () => {
   return {
     language,
     locale,
-    sidder,
+    sidebar,
     changeLanguage,
   };
 });
