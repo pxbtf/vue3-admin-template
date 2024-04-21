@@ -9,6 +9,9 @@ declare module "vue" {
   export interface GlobalComponents {
     AppLink: (typeof import("./../components/AppLink/index.vue"))["default"];
     AppMain: (typeof import("./../layout/components/AppMain/index.vue"))["default"];
+    Breadcrumb: (typeof import("./../components/Breadcrumb/index.vue"))["default"];
+    ElBreadcrumb: (typeof import("element-plus/es"))["ElBreadcrumb"];
+    ElBreadcrumbItem: (typeof import("element-plus/es"))["ElBreadcrumbItem"];
     ElButton: (typeof import("element-plus/es"))["ElButton"];
     ElCard: (typeof import("element-plus/es"))["ElCard"];
     ElForm: (typeof import("element-plus/es"))["ElForm"];
@@ -17,13 +20,18 @@ declare module "vue" {
     ElInput: (typeof import("element-plus/es"))["ElInput"];
     ElMenu: (typeof import("element-plus/es"))["ElMenu"];
     ElMenuItem: (typeof import("element-plus/es"))["ElMenuItem"];
+    ElPageHeader: (typeof import("element-plus/es"))["ElPageHeader"];
     ElSubMenu: (typeof import("element-plus/es"))["ElSubMenu"];
+    Hamburger: (typeof import("./../components/Hamburger/index.vue"))["default"];
     HelloWorld: (typeof import("./../components/HelloWorld.vue"))["default"];
     IEpInfoFilled: (typeof import("~icons/ep/info-filled"))["default"];
     IEpSuccessFilled: (typeof import("~icons/ep/success-filled"))["default"];
     IEpWarningFilled: (typeof import("~icons/ep/warning-filled"))["default"];
     IEpWarnTriangleFilled: (typeof import("~icons/ep/warn-triangle-filled"))["default"];
     LangSelect: (typeof import("./../components/LangSelect/index.vue"))["default"];
+    NavBar: (typeof import("./../layout/components/NavBar/index.vue"))["default"];
+    NavbarLeft: (typeof import("./../layout/components/NavBar/components/NavbarLeft.vue"))["default"];
+    NavbarRight: (typeof import("./../layout/components/NavBar/components/NavbarRight.vue"))["default"];
     RouterLink: (typeof import("vue-router"))["RouterLink"];
     RouterView: (typeof import("vue-router"))["RouterView"];
     Settings: (typeof import("./../layout/components/Settings/index.vue"))["default"];

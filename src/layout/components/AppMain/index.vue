@@ -6,10 +6,10 @@
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style lang="scss" scoped>
 .app-main {
-  width: 100%;
-  height: 100%;
+  min-height: 100%;
+  padding-top: $navbar-height;
   border-color: antiquewhite;
 }
 </style>

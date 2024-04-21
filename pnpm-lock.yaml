@@ -94,6 +94,9 @@ devDependencies:
   path-browserify:
     specifier: ^1.0.1
     version: 1.0.1
+  path-to-regexp:
+    specifier: ^6.2.2
+    version: 6.2.2
   postcss:
     specifier: ^8.4.38
     version: 8.4.38

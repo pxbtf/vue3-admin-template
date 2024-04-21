@@ -1,11 +1,12 @@
 <template>
   <div class="wh-full">
-    <div class="flex">
-      <!-- 侧边栏样式 -->
-      <Sidebar class="sidebar-container" />
-      <div>
-        <AppMain />
+    <!-- 侧边栏样式 -->
+    <Sidebar class="sidebar-container" />
+    <div class="main-container">
+      <div class="fixed-header">
+        <NavBar />
       </div>
+      <AppMain />
     </div>
   </div>
 </template>
@@ -27,5 +28,19 @@ import Sidebar from "./components/Sidebar/index.vue";
   overflow: hidden;
   background-color: $menu-background;
   transition: width 0.28s;
+}
+
+.main-container {
+  position: relative;
+  min-height: 100%;
+  margin-left: $sidebar-width;
+  transition: margin-left 0.28s;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - $sidebar-width);
 }
 </style>
