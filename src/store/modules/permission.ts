@@ -37,25 +37,26 @@ const hasPermission = (roles: string[], route: RouteRecordRaw) => {
 const filterAsyncRoutes = (routes: RouteRecordRaw[], roles: string[]) => {
   const asyncRoutes: RouteRecordRaw[] = [];
   routes.forEach((route) => {
-    const tmpxRoutes = { ...route };
+    const tmpxRoute = { ...route };
     if (!route.name) {
-      tmpxRoutes.name = route.path;
+      tmpxRoute.name = route.path;
     }
     // 判断用户（角色）是否有该路由的访问权限
     if (hasPermission(roles, route)) {
-      if (tmpxRoutes.component?.toString() == "Layout") {
-        tmpxRoutes.component = Layout;
+      if (tmpxRoute.component?.toString() == "Layout") {
+        tmpxRoute.component = Layout;
       } else {
-        const component = modules[`../../views/${tmpxRoutes.component}.vue`];
+        const component = modules[`../../views/${tmpxRoute.component}.vue`];
         if (component) {
-          tmpxRoutes.component = component;
+          tmpxRoute.component = component;
         } else {
-          tmpxRoutes.component = modules[`../../views/error-page/404.vue`];
+          tmpxRoute.component = modules[`../../views/error-page/404.vue`];
         }
       }
-      if (tmpxRoutes.children) {
-        tmpxRoutes.children = filterAsyncRoutes(tmpxRoutes.children, roles);
+      if (tmpxRoute.children) {
+        tmpxRoute.children = filterAsyncRoutes(tmpxRoute.children, roles);
       }
+      asyncRoutes.push(tmpxRoute);
     }
   });
   return asyncRoutes;

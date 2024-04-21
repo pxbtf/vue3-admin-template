@@ -71,7 +71,7 @@ const OneChild = ref(); // 临时 唯一子路由
  * @param children
  * @param parent 当前路由
  */
-function IshasOneChild(children: RouteRecordRaw[], parent: RouteRecordRaw) {
+function IshasOneChild(children: RouteRecordRaw[] = [], parent: RouteRecordRaw) {
   // 过滤不显示的子路由
   const childrenRoute = children.filter((route: RouteRecordRaw) => {
     if (route.meta?.hidden) {

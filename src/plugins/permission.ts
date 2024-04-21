@@ -35,6 +35,8 @@ export function setupPermission() {
           const { roles } = await userStore.getUserInfo();
 
           const accessedRoutes = await permissionStore.generateRoutes(roles);
+
+          console.log("获取用户权限的路由", accessedRoutes);
           try {
             // 获得权限内可访问的路由信息并添加到路由表中
             accessedRoutes.forEach((route: RouteRecordRaw) => {
